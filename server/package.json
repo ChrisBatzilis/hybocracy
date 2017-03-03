@@ -1,0 +1,42 @@
+{
+  "name": "hybocracy",
+  "version": "0.0.1",
+  "description": "hybocracy server",
+  "main": "server.js",
+  "scripts": {
+    "soft-clean": "rm -rf dist",
+    "clean": "rm -rf dist node_modules typings",
+    "postinstall": "typings install",
+    "compile": "npm run soft-clean && tsc && npm run copy:assets",
+    "watch:compile": "tsc -w",
+    "pretest": "npm run compile",
+    "test": "export NODE_ENV=test && export DEBUG=hybo:* && mocha dist/test",
+    "watch:test": "export NODE_ENV=test && export DEBUG=hybo:* && mocha -w dist/test",
+    "lint": "tslint \"src/**/*.ts\"",
+    "start": "export NODE_ENV=development && export DEBUG=hybo:* && nodemon dist/server.js",
+    "copy:assets": "cp -r src/assets dist/src/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.0",
+    "debug": "^2.6.1",
+    "express": "^4.15.0",
+    "jsonwebtoken": "^7.3.0",
+    "lodash": "^4.17.4",
+    "moment": "2.17.1",
+    "mongodb": "^2.2.24",
+    "mongoose": "^4.8.5",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nock": "^9.0.2",
+    "nodemon": "^1.11.0",
+    "supertest": "^2.0.1",
+    "tslint": "^4.0.2",
+    "typescript": "^2.1.4",
+    "typings": "^2.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "hybo-ui-server",
+  "dependencies": {
+    "express": "registry:npm/express#4.14.0+20160925001530",
+    "request": "registry:npm/request#2.69.0+20160428223725"
+  },
+  "globalDependencies": {
+    "body-parser": "registry:dt/body-parser#0.0.0+20160619023215",
+    "debug": "registry:dt/debug#0.0.0+20160317120654",
+    "es6-promise": "registry:dt/es6-promise#0.0.0+20160614011821",
+    "node": "registry:env/node#6.0.0+20161105011511"
+  }
+}
