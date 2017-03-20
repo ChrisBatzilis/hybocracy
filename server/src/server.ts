@@ -1,7 +1,8 @@
 import {HttpServer} from './httpServer';
-const debug = require('debug')('red0:server');
+require('./api/models/db');
+const debugapi = require('debug')('red0:server');
 
-debug('starting red0 ui-server');
+//debug('starting red0 ui-server');
 
 const server = new HttpServer();
 server.start().then(() => {
