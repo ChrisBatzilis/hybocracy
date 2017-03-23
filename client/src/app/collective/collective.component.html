@@ -1,0 +1,19 @@
+
+<h3>collectives</h3>
+<ul>
+  <li *ngFor="let coll of collectives">
+    {{ coll.name }} - {{ coll.desc }}
+  </li>
+</ul>
+<div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="newColl.name" placeholder="name">
+  </div>
+  <div>
+    <label>desc: </label>
+    <input [(ngModel)]="newColl.desc" placeholder="desc">
+  </div>
+  <button (click)="save()">Save</button>
+  <button (click)="cancel()">Cancel</button>
+</div>
