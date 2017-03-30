@@ -1,38 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-import { CollectiveService } from './collective.service';
+import { CollectiveService, Collective } from './collective.service';
 
-
-export interface Collective {
-  name: string,
-  desc: string
-}
 @Component({
   selector: 'hybo-collective',
   templateUrl: './collective.component.html',
   styleUrls: ['./collective.component.css'],
   providers: [CollectiveService]
 })
-export class CollectiveComponent implements OnInit {
+export class CollectiveComponent {
 
-  collectives: any[];
-  newColl: Collective = { name: '', desc: ''};
+  collective: Collective = { id: null, name: '', desc: ''};
 
   constructor(private collectiveService: CollectiveService) { }
 
-  ngOnInit() {
-    this.collectiveService.getCollectives().subscribe((colls) => {
-      this.collectives = colls.json();
-    });
+  editCollective(coll: Collective) {
+    this.collective = coll;
   }
 
   save() {
-    this.collectives.push(this.newColl);
-    this.collectiveService.saveCollective(this.newColl);
-    this.newColl = { name: '', desc: ''};
+    this.collectiveService.saveCollective(this.collective);
+    this.collective = { id: null, name: '', desc: ''};
   }
 
   cancel() {
-    this.newColl = { name: '', desc: ''};
+    this.collective = { id: null,  name: '', desc: ''};
   }
 }
