@@ -1,10 +1,15 @@
 
-<h3>collectives</h3>
-<ul>
-  <li *ngFor="let coll of collectiveService.getCachedCollectives()">
-    {{ coll.name }} - {{ coll.desc }} <button (click)="editCollective(coll)">Edit </button>
-  </li>
-</ul>
+<h3>Collectives</h3>
+
+<md-list flex>    
+  <!--<md-subheader class="md-no-sticky">cols:</md-subheader> -->
+  <md-list-item class="md-3-line" *ngFor="let coll of collectiveService.getCachedCollectives()">
+    <div class="md-list-item-text" layout="column">
+      - {{ coll.name }} - {{ coll.desc }} <button (click)="editCollective(coll)" md-mini-fab>Edit</button>
+    </div>
+  </md-list-item>
+</md-list>   
+
 <div>
   <div>
     <label>name: </label>
@@ -14,6 +19,6 @@
     <label>desc: </label>
     <input [(ngModel)]="collective.desc" placeholder="desc">
   </div>
-  <button (click)="save()">Save</button>
-  <button (click)="cancel()">Cancel</button>
+  <button (click)="save()" md-raised-button>Save</button>
+  <button (click)="cancel()" md-raised-button>Cancel</button>
 </div>
