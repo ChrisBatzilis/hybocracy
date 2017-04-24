@@ -1,5 +1,5 @@
 import * as express from 'express';
-
+import * as _ from 'lodash';
 export let collectiveRouter = express.Router();
 
 let collectives = [{ id: 1, name: 'Green Street Hooligans', desc: 'some hippy stuff'},
@@ -12,8 +12,9 @@ collectiveRouter.get('/', (req, res) => {
 });
 
 collectiveRouter.post('/:id', (req, res) => {
-  let index = collectives.findIndex((col) => { return col.id == req.params.id;});
-  collectives[index] = req.body;
+  //let index = collectives.findIndex((col) => { return col.id == req.params.id;});
+  _(collectives).findIndex((col) => { return col.id == req.params.id;}).value();
+  collectives[0] = req.body;
   res.json(req.body);  
 });
 
