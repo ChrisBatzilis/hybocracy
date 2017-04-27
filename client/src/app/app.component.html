@@ -1,4 +1,18 @@
-<h1>
-  {{title}}
-</h1>
-<hybo-footer></hybo-footer>
+<md-toolbar class="toolbar">
+  Silo-Ninja / Hybocracy
+</md-toolbar>
+
+<md-list flex>
+<div layout="row" layout-xs="column">
+  <h1>
+    {{title}}
+  </h1>  
+</div>
+<div layout="row" layout-xs="column">
+  <div flex>
+    <hybo-collective></hybo-collective>
+  </div>
+</div>
+<div layout="row">
+  <hybo-footer></hybo-footer>
+</div>
