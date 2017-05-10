@@ -1,5 +1,6 @@
 import * as express from 'express';
 import { collectiveRouter } from './collective';
+import { memberRouter } from './member';
 export let router = express.Router();
 
 router.get('/version', (req, res) => {
@@ -7,3 +8,5 @@ router.get('/version', (req, res) => {
 });
 
 router.use('/collectives', collectiveRouter);
+
+router.use('/members', memberRouter);

@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { CollectiveComponent } from './collective/collective.component';
+import { MemberComponent } from './member/member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    CollectiveComponent
+    CollectiveComponent,
+    MemberComponent
   ],
   imports: [
     BrowserModule,
