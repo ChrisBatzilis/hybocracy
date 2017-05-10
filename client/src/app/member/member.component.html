@@ -1,0 +1,13 @@
+Members:
+<form>
+  <md-input-container  class="demo-full-width">
+    <input name="firstName" [(ngModel)]="newMember.firstName" mdInput placeholder="First Name">
+  </md-input-container>
+  <md-input-container class="demo-full-width">
+    <input name="lastName" [(ngModel)]="newMember.lastName" mdInput placeholder="Last Name">
+  </md-input-container>
+  <md-input-container class="demo-full-width">
+    <input name="email" [(ngModel)]="newMember.email" mdInput placeholder="E-Mail">
+  </md-input-container>
+  <button (click)="save()" md-raised-button>Save</button>
+</form>
