@@ -10,8 +10,7 @@ import { AuthService, User } from '../auth.service';
 export class NavbarComponent implements OnInit {
 
   user: User
-  loggerInUser: any
-   
+
   constructor(private authService:AuthService) { 
     this.user = { email: '', password: '' };
   }
@@ -20,6 +19,15 @@ export class NavbarComponent implements OnInit {
 
   login() {
     this.authService.login(this.user);
+    delete this.user.password 
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  loginStatus() {
+    return this.authService.isLoggedIn();
   }
 
 }

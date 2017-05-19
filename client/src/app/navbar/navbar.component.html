@@ -3,7 +3,7 @@
   <!-- <hybo-member></hybo-member> -->
   <span class="fill-remaining-space"></span>
 
-  <form class="navbarForm">
+  <form class="navbarForm" *ngIf="!loginStatus()">
     <md-input-container class="navbarInput">
       <input name="email" [(ngModel)]="user.email" mdInput placeholder="e-Mail">
     </md-input-container>
@@ -25,6 +25,6 @@
 </md-toolbar>
 <md-menu x-position="before" #menu="mdMenu">
     <button md-menu-item routerLink="/settings">Settings</button>
-    <button md-menu-item routerLink="/logout">Logout</button>
+    <button md-menu-item (click)="logout()">Logout</button>
     <!--<button md-menu-item>Help</button>-->
 </md-menu>
