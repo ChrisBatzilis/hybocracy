@@ -3,6 +3,10 @@
   <!-- <hybo-member></hybo-member> -->
   <span class="fill-remaining-space"></span>
 
+  <span class="navbarForm" *ngIf="loginStatus()" class="displayName">
+    {{ displayName() }}
+  </span>
+
   <form class="navbarForm" *ngIf="!loginStatus()">
     <md-input-container class="navbarInput">
       <input name="email" [(ngModel)]="user.email" mdInput placeholder="e-Mail">

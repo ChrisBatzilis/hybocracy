@@ -9,3 +9,8 @@
 .navbarInput {
   min-width: 200px;
 }
+
+.displayName {
+  font-size: 12px;
+  font-style: italic;
+}

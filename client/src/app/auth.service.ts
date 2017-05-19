@@ -27,8 +27,12 @@ export class AuthService {
     return (this.loggedInUser) ? true : false;
   }
 
+  getDisplayName() {
+    return this.loggedInUser.email;
+  }
+
   logout() {
-    this.loggedInUser = undefined;
+    this.loggedInUser = undefined;  
   }
 
 }
