@@ -1,0 +1,11 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.navbarForm {
+  font-size: 12px;
+}
+
+.navbarInput {
+  min-width: 200px;
+}

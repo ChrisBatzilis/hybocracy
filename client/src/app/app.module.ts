@@ -8,13 +8,16 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { CollectiveComponent } from './collective/collective.component';
 import { MemberComponent } from './member/member.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     CollectiveComponent,
-    MemberComponent
+    MemberComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
