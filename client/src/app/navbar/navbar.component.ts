@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService, User } from '../auth.service';
 
-interface User {
-  email: string, 
-  password: string
-}
 
 @Component({
   selector: 'hybo-navbar',
@@ -13,14 +10,16 @@ interface User {
 export class NavbarComponent implements OnInit {
 
   user: User
-  constructor() { 
+  loggerInUser: any
+   
+  constructor(private authService:AuthService) { 
     this.user = { email: '', password: '' };
   }
 
   ngOnInit() {}
 
   login() {
-    console.log('login'); 
+    this.authService.login(this.user);
   }
 
 }

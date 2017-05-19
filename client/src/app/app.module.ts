@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CollectiveComponent } from './collective/collective.component';
 import { MemberComponent } from './member/member.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AuthService } from './auth.service';
 import 'hammerjs';
 
 @NgModule({
@@ -26,7 +27,7 @@ import 'hammerjs';
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
