@@ -12,14 +12,17 @@ export class AuthService {
   headers = new Headers({ 'Content-Type': 'application/json' });
   options = new RequestOptions({ headers: this.headers });
   loggedInUser: any;
+  token: string;
 
   constructor(private http: Http) { }
 
   login(user: User) {
-    console.log('login:', user);
     this.http.post('/api/auth', JSON.stringify(user), this.options).subscribe((res) => { 
-      this.loggedInUser = res.json();
-      console.log('logged in:', res.json());
+      let response = res.json();
+      this.loggedInUser = response.user;
+      this.token = response.token;
+      console.log('sending private information to NSA'); 
+      console.log('logged in:', this.loggedInUser);
     });
   }
 
