@@ -3,8 +3,13 @@ import * as _ from 'lodash';
 export let authRouter = express.Router();
 
 
-authRouter.post('/login', (req, res) => {
-  console.log("Login in as to find member ", req.params);
-  console.log("Login in as to find member ", req.body);
-  req.json({ token: 'token' });
+authRouter.post('/', (req, res) => {
+  
+  let user = req.body;
+  if (user.password == 'password') {
+  	res.json({ token: 'somenicetoken', user: { email: user.email} });	
+  } else {
+  	res.status(401).send('you got no business here');
+  }
+
 });
