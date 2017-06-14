@@ -7,6 +7,7 @@ authRouter.post('/', (req, res) => {
   
   let user = req.body;
   if (user.password == 'password') {
+  	// todo: check real password against db
   	res.json({ token: 'somenicetoken', user: { email: user.email} });	
   } else {
   	res.status(401).send('you got no business here');
