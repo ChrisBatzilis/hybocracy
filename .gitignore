@@ -38,3 +38,5 @@ jspm_packages
 
 #Typescript compiled files
 dist/
+
+typings/

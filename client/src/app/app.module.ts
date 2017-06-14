@@ -7,12 +7,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { CollectiveComponent } from './collective/collective.component';
+import { MemberComponent } from './member/member.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AuthService } from './auth.service';
+import 'hammerjs';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    CollectiveComponent
+    CollectiveComponent,
+    MemberComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,7 @@ import { CollectiveComponent } from './collective/collective.component';
     MaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

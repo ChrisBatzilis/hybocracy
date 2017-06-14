@@ -11,14 +11,14 @@
 </md-list>   
 
 <div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="collective.name" placeholder="name">
-  </div>
-  <div>
-    <label>desc: </label>
-    <input [(ngModel)]="collective.desc" placeholder="desc">
-  </div>
-  <button (click)="save()" md-raised-button>Save</button>
-  <button (click)="cancel()" md-raised-button>Cancel</button>
+  <form>
+    <md-input-container  class="demo-full-width">
+      <input name="firstName" [(ngModel)]="collective.name" mdInput placeholder="Collective Name">
+    </md-input-container>
+    <md-input-container  class="demo-full-width">
+      <input name="firstName" [(ngModel)]="collective.desc" mdInput placeholder="Collective Description">
+    </md-input-container>
+    <button (click)="save()" md-raised-button>Save</button>
+    <button (click)="cancel()" md-raised-button>Cancel</button>
+  </form>
 </div>

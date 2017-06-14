@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+require('./member');
 var dbURI='mongodb://localhost/hybocracy';
 
 if(process.env.NODE_ENV==='production'){
