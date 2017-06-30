@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authService: AuthService) { 
     this.user = { email: '', password: '', firstName: '', lastName: ''};
     console.log('nav' ,this.authService.loggedInUser);
+
   }
 
   ngOnInit() {}
@@ -21,6 +22,10 @@ export class NavbarComponent implements OnInit {
   login() {
     this.authService.login(this.user);
     delete this.user.password 
+  }
+
+  openRegister() {
+    console.log('open register dialog');
   }
 
   logout() {
