@@ -45,7 +45,6 @@ export class CollectiveService {
   }
 
   updateCollectiveCache() {
-    console.log('updates');
     this.getCollectives().subscribe((colls) => {
       this.cachedCollectives = colls.json();
     });
