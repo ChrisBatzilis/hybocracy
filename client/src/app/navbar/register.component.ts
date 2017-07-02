@@ -19,6 +19,6 @@ export class RegisterDialog {
     public title: string;
     public message: string;
 
-    //constructor(public dialogRef: MdDialogRef<RegisterDialog>) {
-    constructor() {}
+    constructor(public dialogRef: MdDialogRef<RegisterDialog>) {
+    }
 }

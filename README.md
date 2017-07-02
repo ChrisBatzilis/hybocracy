@@ -10,7 +10,7 @@ Both are written using typescript
 https://travis-ci.org/ChrisBatzilis/hybocracy
 
 # Prerequisites:
-nodejs 7.x / npm 3.x
+nodejs 7.x, 8.x / npm 3.x, 4.x
 
 # Client
 Created using angular-cli: https://github.com/angular/angular-cli
