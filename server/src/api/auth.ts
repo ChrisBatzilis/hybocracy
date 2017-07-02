@@ -6,15 +6,14 @@ import * as mongoose from 'mongoose';
 let User = mongoose.model('User');
 
 authRouter.post('/', (req, res) => {
-  
   let user = req.body;
-  if (user.password == 'password') {
-  	// todo: check real password against db
-  	res.json({ token: 'somenicetoken', user: { email: user.email, firstName: 'Chuck', lastName: 'Norris'} });	
-  } else {
-  	res.status(401).send('you got no business here');
-  }
-
+  User.findOne({email: user.email}, (err, founduser) => {
+  	if (!err && user.password == founduser.password) {
+  	  res.json({ token: 'somenicetoken', user: founduser });		
+  	} else {
+  	  res.status(401).send('you got no business here');	
+  	}
+  });
 });
 
 authRouter.post('/register', (req, res) => { 
