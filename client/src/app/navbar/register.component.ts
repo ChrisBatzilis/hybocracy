@@ -2,6 +2,7 @@
 import { MdDialogRef } from '@angular/material';
 import { Component } from '@angular/core';
 
+
 @Component({
     selector: 'hb-register-dialog',
     template: `
@@ -13,12 +14,11 @@ import { Component } from '@angular/core';
             (click)="dialogRef.close()">Cancel</button>
     `,
 })
-export class ConfirmDialog {
+export class RegisterDialog {
 
     public title: string;
     public message: string;
 
-    constructor(public dialogRef: MdDialogRef<RegisterDialog>) {
-
-    }
+    //constructor(public dialogRef: MdDialogRef<RegisterDialog>) {
+    constructor() {}
 }
