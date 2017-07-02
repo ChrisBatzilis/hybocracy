@@ -15,7 +15,9 @@
       <input name="password" [(ngModel)]="user.password" mdInput type="password" placeholder="password">
     </md-input-container>
     <button (click)="login()" md-button fxHide="false" fxHide.gt-sm>Login</button>
+    <button (click)="openRegister()" md-button fxHide="false" fxHide.gt-sm>Register</button>
   </form>
+
 
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
     <!--
@@ -23,11 +25,11 @@
     <button md-button routerLink="/dashboard">Dashboard</button>
     -->
   </div>
-  <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+  <button *ngIf="loginStatus()" md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
     <md-icon>menu</md-icon>
   </button>
 </md-toolbar>
-<md-menu x-position="before" #menu="mdMenu">
+<md-menu  x-position="before" #menu="mdMenu">
     <button md-menu-item routerLink="/settings">Settings</button>
     <button md-menu-item (click)="logout()">Logout</button>
     <!--<button md-menu-item>Help</button>-->
