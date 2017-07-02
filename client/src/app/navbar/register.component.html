@@ -1,0 +1,26 @@
+<!--
+<p>{{ title }}</p>
+<p>{{ message }}</p>
+<form>
+username:
+<input type="text">
+</form>
+<button type="button" md-raised-button 
+    (click)="dialogRef.close(true)">OK</button>
+<button type="button" md-button 
+    (click)="dialogRef.close()">Cancel</button>
+-->
+
+<form>
+<md-input-container>
+  <input name="email" [(ngModel)]="user.email" mdInput placeholder="e-Mail">
+</md-input-container>
+<md-input-container>
+  <input name="password" [(ngModel)]="user.password" mdInput type="password" placeholder="password">
+</md-input-container>
+<md-input-container>
+  <input name="password" [(ngModel)]="user.confirmPassword" mdInput type="password" placeholder="password">
+</md-input-container>
+<button (click)="register()" md-button fxHide="false" fxHide.gt-sm>Register</button>
+<button (click)="cancel()" md-button fxHide="false" fxHide.gt-sm>Cancel</button>
+</form>

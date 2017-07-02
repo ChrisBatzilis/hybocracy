@@ -26,9 +26,9 @@ export class NavbarComponent implements OnInit {
   }
 
   openRegister() {
-    console.log('open register dialog');
-    this.registerDialogService.confirm('Confirm Dialog', 'Are you sure you want to do this?')
-      .subscribe(res => console.log('res:', res));
+    this.registerDialogService.openRegistrationDialog().subscribe(res => {
+      console.log('registration complete:', res) 
+    });
   }
 
   logout() {
