@@ -1,26 +1,34 @@
-<!--
-<p>{{ title }}</p>
-<p>{{ message }}</p>
+<h3>Register</h3>
 <form>
-username:
-<input type="text">
-</form>
-<button type="button" md-raised-button 
-    (click)="dialogRef.close(true)">OK</button>
-<button type="button" md-button 
-    (click)="dialogRef.close()">Cancel</button>
--->
-
-<form>
-<md-input-container>
-  <input name="email" [(ngModel)]="user.email" mdInput placeholder="e-Mail">
-</md-input-container>
-<md-input-container>
-  <input name="password" [(ngModel)]="user.password" mdInput type="password" placeholder="password">
-</md-input-container>
-<md-input-container>
-  <input name="password" [(ngModel)]="user.confirmPassword" mdInput type="password" placeholder="password">
-</md-input-container>
-<button (click)="register()" md-button fxHide="false" fxHide.gt-sm>Register</button>
-<button (click)="cancel()" md-button fxHide="false" fxHide.gt-sm>Cancel</button>
+<md-list flex>
+	<div layout="row" layout-sm="column">
+		<md-input-container>
+		  	<input name="firstName" [(ngModel)]="user.firstName" mdInput placeholder="FirstName">
+		</md-input-container>
+	</div>
+	<div layout="row" layout-sm="column">
+		<md-input-container>
+		  	<input name="lastName" [(ngModel)]="user.lastName" mdInput placeholder="LastName">
+		</md-input-container>
+	</div>
+	<div layout="row" layout-sm="column">
+		<md-input-container>
+		  	<input name="email" [(ngModel)]="user.email" mdInput placeholder="E-Mail">
+		</md-input-container>
+	</div>
+	<div layout="row" layout-sm="column">
+		<md-input-container>
+		  	<input name="password" [(ngModel)]="user.password" mdInput type="password" placeholder="Password">
+		</md-input-container>
+	</div>
+	<div layout="row" layout-sm="column">
+		<md-input-container>
+		  	<input name="password" [(ngModel)]="user.passwordConfirm" mdInput type="password" placeholder="Confirm Password">
+		</md-input-container>
+	</div>
+	<div layout="row" layout-sm="column">
+		<button (click)="register()" md-button fxHide="false" fxHide.gt-sm>Register</button>
+		<button (click)="cancel()" md-button fxHide="false" fxHide.gt-sm>Cancel</button>
+	</div>
+</md-list>
 </form>

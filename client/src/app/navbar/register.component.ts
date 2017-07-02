@@ -1,24 +1,8 @@
-
+import { Observable } from 'rxjs';
 import { MdDialogRef } from '@angular/material';
 import { Component } from '@angular/core';
-
-/*
-@Component({
-    selector: 'hb-register-dialog',
-    template: `
-        <p>{{ title }}</p>
-        <p>{{ message }}</p>
-        <form>
-        username:
-        <input type="text">
-        </form>
-        <button type="button" md-raised-button 
-            (click)="dialogRef.close(true)">OK</button>
-        <button type="button" md-button 
-            (click)="dialogRef.close()">Cancel</button>
-    `,
-})
-*/
+//import { MemberService } from '../member/member.service'; 
+import { AuthService } from '../auth.service'; 
 
 @Component({
   selector: 'hb-register-dialog',
@@ -35,15 +19,35 @@ export class RegisterDialog {
     }
     public title: string;
 
-    constructor(public dialogRef: MdDialogRef<RegisterDialog>) {}
+    constructor(public dialogRef: MdDialogRef<RegisterDialog>, private authService: AuthService) {}
+
+    private validateUser(): boolean {
+        if (this.user.firstName.length > 1 &&
+            this.user.lastName.length > 1 &&
+            this.user.email.indexOf('@') > 1 && 
+            this.user.password.length > 4 &&
+            this.user.password == this.user.passwordConfirm) {
+            console.log('is valid:');
+            return true;    
+        } else {
+            return false;
+        }
+    }
 
     register() {
-        console.log("register");
-        this.dialogRef.close()
+        if (this.validateUser()) {
+            this.authService.registerNewUser(this.user).subscribe(res => {
+                console.log('got response', res);
+                if (res) {
+                    this.dialogRef.close()    
+                } else {
+                    console.log('failed to create new user');
+                }
+            });
+        }
     }
 
     cancel() {
         this.dialogRef.close()    
     }
-    
 }

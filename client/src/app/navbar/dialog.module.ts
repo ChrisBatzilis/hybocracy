@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RegisterDialog }   from './register.component';
 import { MaterialModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { MemberService } from '../member/member.service'; 
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
         RegisterDialog,
     ],
     declarations: [
-        RegisterDialog,
+        RegisterDialog
+        //MemberService
     ],
     providers: [
         RegisterDialogService,

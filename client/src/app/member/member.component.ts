@@ -28,7 +28,7 @@ export class MemberComponent implements OnInit {
   }
 
   resetMemberFields() {
-    this.newMember = { firstName: '', lastName: '', email: ''};
+    this.newMember = { firstName: '', lastName: '', email: '', password: ''};
   }
 }
 

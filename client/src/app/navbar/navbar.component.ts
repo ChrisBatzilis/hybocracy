@@ -14,8 +14,6 @@ export class NavbarComponent implements OnInit {
 
   constructor(private authService: AuthService, private registerDialogService: RegisterDialogService) { 
     this.user = { email: '', password: '', firstName: '', lastName: ''};
-    console.log('nav' ,this.authService.loggedInUser);
-
   }
 
   ngOnInit() {}
