@@ -6,9 +6,14 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "lib": [
+      "es6"
+    ]
   },
   "exclude": [
     "node_modules"
   ]
 }
+
+//

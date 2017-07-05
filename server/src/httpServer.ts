@@ -19,7 +19,7 @@ export class HttpServer {
   server: Server;
 
   start(): Promise<any> {
-      return new Promise((resolve, reject)=> {
+      return new Promise((resolve, reject) => {
           const app = this.express = express();
           app.use(bodyParser.json());
 

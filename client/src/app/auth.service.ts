@@ -64,4 +64,20 @@ export class AuthService {
   getDisplayName() {
     return this.loggedInUser.email;
   }
+
+  registerNewUser(user: User): Observable<boolean> {
+    console.log('create user:', user);
+    return this.http.post('/api/auth/register', JSON.stringify(user), this.options).map((response: Response) => {
+      console.log('res:', response);
+      if (response.status == 200) {
+        console.log('success');
+        return true;
+      } else {
+        console.log('failure');
+        return false;
+      }
+    });
+    
+    //return Observable.create((ob) => ob.next(true));
+  }
 }

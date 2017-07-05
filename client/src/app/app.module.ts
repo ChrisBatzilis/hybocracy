@@ -10,6 +10,7 @@ import { CollectiveComponent } from './collective/collective.component';
 import { MemberComponent } from './member/member.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './auth.service';
+import { DialogsModule } from './navbar/dialog.module';
 import 'hammerjs';
 
 @NgModule({
@@ -25,7 +26,8 @@ import 'hammerjs';
     FormsModule,
     HttpModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DialogsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

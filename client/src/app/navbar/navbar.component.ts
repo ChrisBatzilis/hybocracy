@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService, User } from '../auth.service';
+import { RegisterDialogService } from './register.service';
 
 
 @Component({
@@ -11,10 +12,8 @@ export class NavbarComponent implements OnInit {
 
   user: User
 
-  constructor(private authService: AuthService) { 
+  constructor(private authService: AuthService, private registerDialogService: RegisterDialogService) { 
     this.user = { email: '', password: '', firstName: '', lastName: ''};
-    console.log('nav' ,this.authService.loggedInUser);
-
   }
 
   ngOnInit() {}
@@ -25,7 +24,9 @@ export class NavbarComponent implements OnInit {
   }
 
   openRegister() {
-    console.log('open register dialog');
+    this.registerDialogService.openRegistrationDialog().subscribe(res => {
+      console.log('registration complete:', res) 
+    });
   }
 
   logout() {
