@@ -38,7 +38,7 @@
     "nodemon": "^1.11.0",
     "supertest": "^2.0.1",
     "tslint": "^4.0.2",
-    "typescript": "^2.1.4",
-    "typings": "^2.0.0"
+    "typescript": "^2.4.1",
+    "typings": "^2.1.1"
   }
 }
